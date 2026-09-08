@@ -1,0 +1,123 @@
+:root {
+  --primary-color: #2563EB;
+  --success-color: #16A34A;
+  --danger-color: #DC2626;
+  --warning-color: #F59E0B;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #F8FAFC;
+  color: #1E293B;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-bs-theme="dark"] body {
+  background-color: #121212;
+  color: #E0E0E0;
+}
+
+/* Card Styling */
+.card {
+  border-radius: 0.75rem;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .card {
+  background-color: #1E1E1E;
+  border-color: #333;
+}
+
+/* Sidebar & Navbar */
+[data-bs-theme="dark"] .bg-body-tertiary {
+  background-color: #1A1A1A !important;
+}
+
+[data-bs-theme="dark"] .border-end,
+[data-bs-theme="dark"] .border-bottom {
+  border-color: #333 !important;
+}
+
+/* Table */
+[data-bs-theme="dark"] .table-light {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+}
+
+[data-bs-theme="dark"] .table {
+  color: #E0E0E0;
+  border-color: #333;
+}
+
+[data-bs-theme="dark"] .table-hover tbody tr:hover {
+  color: #E0E0E0;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Inputs & Modals */
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+  background-color: #2A2A2A;
+  border-color: #444;
+  color: #E0E0E0;
+}
+
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+}
+
+[data-bs-theme="dark"] .modal-content {
+  background-color: #1E1E1E;
+  border-color: #333;
+}
+
+/* Text Overrides */
+[data-bs-theme="dark"] .text-muted {
+  color: #A0A0A0 !important;
+}
+
+[data-bs-theme="dark"] .text-body {
+  color: #E0E0E0 !important;
+}
+
+[data-bs-theme="dark"] .bg-white {
+  background-color: #2A2A2A !important;
+}
+
+/* Scrollbar styling for smoother experience */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+[data-bs-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+[data-bs-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Input group addon dark mode fix */
+[data-bs-theme="dark"] .input-group-text {
+  background-color: #2A2A2A;
+  border-color: #444;
+  color: #E0E0E0;
+}
