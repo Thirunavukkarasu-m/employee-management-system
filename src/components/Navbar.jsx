@@ -1,7 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = () => {
+  const closeOffcanvas = () => {
+    const offcanvasElement = document.getElementById('sidebarOffcanvas');
+    if (offcanvasElement) {
+      const closeBtn = offcanvasElement.querySelector('.btn-close');
+      if (closeBtn) closeBtn.click();
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-md bg-body-tertiary border-bottom shadow-sm px-3 sticky-top">
       <div className="container-fluid">
@@ -22,40 +30,40 @@ const Navbar = () => {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 d-md-none gap-2">
               <li className="nav-item">
-                <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active text-primary fw-bold' : ''}`} data-bs-dismiss="offcanvas">
+                <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active text-primary fw-bold' : ''}`} onClick={closeOffcanvas}>
                    Dashboard
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/employees" className={({ isActive }) => `nav-link ${isActive ? 'active text-primary fw-bold' : ''}`} data-bs-dismiss="offcanvas">
+                <NavLink to="/employees" className={({ isActive }) => `nav-link ${isActive ? 'active text-primary fw-bold' : ''}`} onClick={closeOffcanvas}>
                    Employees
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/add-employee" className={({ isActive }) => `nav-link ${isActive ? 'active text-primary fw-bold' : ''}`} data-bs-dismiss="offcanvas">
+                <NavLink to="/add-employee" className={({ isActive }) => `nav-link ${isActive ? 'active text-primary fw-bold' : ''}`} onClick={closeOffcanvas}>
                    Add Employee
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/departments" className={({ isActive }) => `nav-link ${isActive ? 'active text-primary fw-bold' : ''}`} data-bs-dismiss="offcanvas">
+                <NavLink to="/departments" className={({ isActive }) => `nav-link ${isActive ? 'active text-primary fw-bold' : ''}`} onClick={closeOffcanvas}>
                    Departments
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/settings" className={({ isActive }) => `nav-link ${isActive ? 'active text-primary fw-bold' : ''}`} data-bs-dismiss="offcanvas">
+                <NavLink to="/settings" className={({ isActive }) => `nav-link ${isActive ? 'active text-primary fw-bold' : ''}`} onClick={closeOffcanvas}>
                    Settings
                 </NavLink>
               </li>
             </ul>
             <div className="d-none d-md-flex ms-auto align-items-center">
                <div className="dropdown">
-                 <a href="#" className="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                 <button className="btn btn-link link-body-emphasis text-decoration-none dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=0D8ABC&color=fff" alt="admin" width="32" height="32" className="rounded-circle" />
-                 </a>
+                 </button>
                  <ul className="dropdown-menu dropdown-menu-end text-small shadow">
-                   <li><a className="dropdown-item" href="#">Profile</a></li>
+                   <li><Link className="dropdown-item" to="/settings">Profile</Link></li>
                    <li><hr className="dropdown-divider" /></li>
-                   <li><a className="dropdown-item" href="#">Sign out</a></li>
+                   <li><button className="dropdown-item" type="button">Sign out</button></li>
                  </ul>
                </div>
             </div>
@@ -67,3 +75,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
