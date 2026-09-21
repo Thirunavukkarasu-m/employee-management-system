@@ -2,6 +2,9 @@
 
 A completely frontend-only React CRUD application for managing employee records, built with modern React, Bootstrap 5, and LocalStorage.
 
+## Live Demo Link
+https://employee-management-system-curd.netlify.app/
+
 ## Features
 - **Create Employee:** Add new employees with detailed professional and personal information.
 - **Read Employees:** View a comprehensive, responsive table of employees with modal profiles.
